@@ -23,11 +23,15 @@ desp = -4;
 //Movimiento de los agujeros de montaje para pasar por encima de la correa
 pos = 11;
 
-% difference() {
-  translate([-33/2,15,-6/2]) cube([60,65,6],center=true);
-  translate([-16.5+disth/2,24+pos,-10]) cylinder(r=da6*3, h=50, $fn=8);
-  translate([-16.5-disth/2,24+pos,-10]) cylinder(r=da6*3, h=50, $fn=8);
+
+module heat_shield() {
+  difference() {
+    translate([-33/2,15,-6/2]) cube([60,65,6],center=true);
+    translate([-16.5+disth/2,24+pos,-10]) cylinder(r=da6*3, h=50, $fn=8);
+    translate([-16.5-disth/2,24+pos,-10]) cylinder(r=da6*3, h=50, $fn=8);
+  }
 }
+% heat_shield();
 
 module x_carriage_base(){
  // Small bearing holder
